@@ -121,18 +121,20 @@ string getStringInput(string prompt) {
    getline(cin,val);
    return val;
 }
-void addCar(){
-   if(carCount >= MAX_CARS){
-      cout << "Car limit reached.\n";
-      return;
-}
-Car c;
+// fixed addCar to initialize numMaint to 0 so new cars start with no maintenance records
+void addCar() {
+    if(carCount >= MAX_CARS) {
+        cout << "Car limit reached.\n";
+        return;
+    }
+    Car c;
     c.make = getStringInput("Enter car make: ");
     c.model = getStringInput("Enter car model: ");
     c.year = getIntInput("Enter car year: ");
     c.mileage = getDoubleInput("Enter mileage: ");
     c.fuelEfficiency = getDoubleInput("Enter fuel efficiency: ");
     c.topSpeed = getDoubleInput("Enter top speed: ");
+    c.numMaint = 0;
     cars[carCount++] = c;
     cout << "Car added successfully.\n";
 }
@@ -227,6 +229,7 @@ void loadData() {
     }
     carFile.close();
 }
+
 
 
 
