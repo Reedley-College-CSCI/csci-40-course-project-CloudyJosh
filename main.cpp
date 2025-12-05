@@ -208,11 +208,16 @@ void sortCarsByMileage() {
     cout << "Cars sorted by mileage.\n";
 }
 // saves car details to an external file for later retrieval
+// added maintenance count and full record writing for reliable file output
 void saveData() {
     ofstream carFile("cars.txt");
     for(int i=0; i<carCount; i++) {
         carFile << cars[i].make << "," << cars[i].model << "," << cars[i].year << ",";
-        carFile << cars[i].mileage << "," << cars[i].fuelEfficiency << "," << cars[i].topSpeed << "\n";
+        carFile << cars[i].mileage << "," << cars[i].fuelEfficiency << "," << cars[i].topSpeed << ",";
+        carFile << cars[i].numMaint << "\n";
+        for(int j=0; j<cars[i].numMaint; j++) {
+            carFile << cars[i].maints[j].type << "," << cars[i].maints[j].date << "," << cars[i].maints[j].cost << "\n";
+        }
     }
     carFile.close();
     cout << "Data saved to file.\n";
@@ -233,6 +238,7 @@ void loadData() {
     }
     carFile.close();
 }
+
 
 
 
