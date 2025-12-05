@@ -138,9 +138,10 @@ void addCar() {
     cars[carCount++] = c;
     cout << "Car added successfully.\n";
 }
+// added clear failure return to avoid invalid indexing when a car is not found
 int searchCar(string make, string model) {
     for(int i=0; i<carCount; i++) {
-        if(cars[i].make == make)   
+        if(cars[i].make == make && cars[i].model == model)
             return i;
     }
     return -1;
@@ -229,6 +230,7 @@ void loadData() {
     }
     carFile.close();
 }
+
 
 
 
