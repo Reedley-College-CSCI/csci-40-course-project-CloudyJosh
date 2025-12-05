@@ -115,12 +115,6 @@ string getStringInput(string prompt) {
     getline(cin, val);
     return val;
 }
-string getStringInput(string prompt) {
-   string val;
-   cout << prompt;
-   getline(cin,val);
-   return val;
-}
 // fixed addCar to initialize numMaint to 0 so new cars start with no maintenance records
 void addCar() {
     if(carCount >= MAX_CARS) {
@@ -248,6 +242,7 @@ void loadData() {
     }
     carFile.close();
 }
+
 
 
 
