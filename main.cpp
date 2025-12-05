@@ -153,6 +153,18 @@ void addMaintenance() {
     cars[idx].maints[cars[idx].numMaint++] = m;
     cout << "Maintenance logged.\n";
 }
+// displays each cars details and its maintenance history
+void displayCarSummary() {
+    for(int i=0; i<carCount; i++) {
+        cout << "\nCar: " << cars[i].make << " " << cars[i].model << "\n";
+        cout << "Year: " << cars[i].year << ", Mileage: " << cars[i].mileage << "\n";
+        cout << "Fuel Eff: " << cars[i].fuelEfficiency << ", Top Speed: " << cars[i].topSpeed << "\n";
+        cout << "Maintenance Records:\n";
+        for(int j=0; j<cars[i].numMaint; j++) {
+            cout << j+1 << ". " << cars[i].maints[j].type << " - " << cars[i].maints[j].date << " $" << cars[i].maints[j].cost << "\n";
+        }
+    }
+}
 
 
 
