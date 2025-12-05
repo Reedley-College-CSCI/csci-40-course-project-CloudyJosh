@@ -99,6 +99,18 @@ double getDoubleInput(string prompt) {
     cin.ignore(1000, '\n'); 
     return val;
 }
+string getStringInput(string prompt) {
+    string val;
+    cout << prompt;
+    getline(cin, val);
+    return val;
+}
+string getStringInput(string prompt) {
+   string val;
+   cout << prompt;
+   getline(cin,val);
+   return val;
+}
 
 
 
