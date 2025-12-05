@@ -1,8 +1,8 @@
 // CSCI-40 Final Project
-// Author: [Your Name Here]
+// Author: [Joshua Montoya]
 
 /* 
- * Description:
+ * Description: Car Maintenance and Performance Tracker.
  *
 */
 
@@ -11,3 +11,4 @@
 int main() {
     return 0;
 }
+
