@@ -133,6 +133,27 @@ int searchCar(string make, string model) {
     }
     return -1;
 }
+// logs a maintenance record for a selected car and updates its maintenance list
+void addMaintenance() {
+    string make = getStringInput("Enter car make: ");
+    string model = getStringInput("Enter car model: ");
+    int idx = searchCar(make, model);
+    if(idx == -1) {
+        cout << "Car not found.\n";
+        return;
+    }
+    if(cars[idx].numMaint >= 10) {
+        cout << "Maintenance limit reached for this car.\n";
+        return;
+    }
+    Maintenance m;
+    m.type = getStringInput("Enter maintenance type: ");
+    m.date = getStringInput("Enter maintenance date: ");
+    m.cost = getDoubleInput("Enter cost: ");
+    cars[idx].maints[cars[idx].numMaint++] = m;
+    cout << "Maintenance logged.\n";
+}
+
 
 
 
