@@ -25,3 +25,14 @@ struct Maintenance {
     string date;
     double cost;
 };
+struct Car {
+    string make;
+    string model;
+    int year;
+    double mileage;
+    double fuelEfficiency;
+    double topSpeed;
+    int numMaint;
+    Maintenance maints[10];
+};
+
