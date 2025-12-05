@@ -223,6 +223,7 @@ void saveData() {
     cout << "Data saved to file.\n";
 }
 // loads car details from file into the program for use at runtime
+// updated parsing to match save format and rebuild maintenance records correctly
 void loadData() {
     ifstream carFile("cars.txt");
     if(!carFile) return;
@@ -232,8 +233,17 @@ void loadData() {
         Car c;
         string line;
         if(!getline(carFile, line)) break;
-        sscanf(line.c_str(), "%[^,],%[^,],%d,%lf,%lf,%lf",
-               &c.make[0], &c.model[0], &c.year, &c.mileage, &c.fuelEfficiency, &c.topSpeed);
+        sscanf(line.c_str(), "%[^,],%[^,],%d,%lf,%lf,%lf,%d", 
+            &c.make[0], &c.model[0], &c.year, &c.mileage, &c.fuelEfficiency, &c.topSpeed, &c.numMaint);
+        for(int j=0; j<c.numMaint; j++) {
+            if(!getline(carFile, line)) break;
+            char type[50], date[20];
+            double cost;
+            sscanf(line.c_str(), "%[^,],%[^,],%lf", type, date, &cost);
+            c.maints[j].type = type;
+            c.maints[j].date = date;
+            c.maints[j].cost = cost;
+        }
         cars[carCount++] = c;
     }
     carFile.close();
