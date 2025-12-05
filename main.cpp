@@ -75,5 +75,16 @@ int main() {
     saveData();
     return 0;
 }
+// function implementations 
+void showMenu(){
+   cout <<"\nCar Maintenance Tracker Menu\n";
+cout << "1. Add Car\n";
+    cout << "2. Log Maintenance\n";
+    cout << "3. Display Car Summary\n";
+    cout << "4. Sort Cars by Year\n";
+    cout << "5. Sort Cars by Mileage\n";
+    cout << "6. Exit\n";
+}
+
 
 
