@@ -111,7 +111,10 @@ string getStringInput(string prompt) {
    getline(cin,val);
    return val;
 }
-
-
+void addCar(){
+   if(carCount >= MAX_CARS){
+      cout << "Car limit reached.\n";
+      return;
+}
 
 
