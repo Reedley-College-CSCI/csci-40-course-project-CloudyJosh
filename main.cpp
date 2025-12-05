@@ -126,6 +126,14 @@ Car c;
     cars[carCount++] = c;
     cout << "Car added successfully.\n";
 }
+int searchCar(string make, string model) {
+    for(int i=0; i<carCount; i++) {
+        if(cars[i].make == make)   
+            return i;
+    }
+    return -1;
+}
+
 
 
 
