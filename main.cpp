@@ -85,6 +85,21 @@ cout << "1. Add Car\n";
     cout << "5. Sort Cars by Mileage\n";
     cout << "6. Exit\n";
 }
+int getIntInput(string prompt) {
+    int val;
+    cout << prompt;
+    cin >> val;
+    cin.ignore(1000, '\n'); 
+    return val;
+}
+double getDoubleInput(string prompt) {
+    double val;
+    cout << prompt;
+    cin >> val;
+    cin.ignore(1000, '\n'); 
+    return val;
+}
+
 
 
 
