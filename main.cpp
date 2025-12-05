@@ -97,11 +97,16 @@ int getIntInput(string prompt) {
     cin.ignore(1000, '\n');
     return val;
 }
+// fixed getDoubleInput to validate user input and prevent invalid doubles from causing errors
 double getDoubleInput(string prompt) {
     double val;
     cout << prompt;
-    cin >> val;
-    cin.ignore(1000, '\n'); 
+    while(!(cin >> val)) {
+        cin.clear();
+        cin.ignore(1000, '\n');
+        cout << "Invalid input. Try again: ";
+    }
+    cin.ignore(1000, '\n');
     return val;
 }
 string getStringInput(string prompt) {
@@ -222,6 +227,7 @@ void loadData() {
     }
     carFile.close();
 }
+
 
 
 
