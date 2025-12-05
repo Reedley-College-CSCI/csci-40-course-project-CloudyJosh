@@ -201,6 +201,23 @@ void saveData() {
     carFile.close();
     cout << "Data saved to file.\n";
 }
+// loads car details from file into the program for use at runtime
+void loadData() {
+    ifstream carFile("cars.txt");
+    if(!carFile) return;
+
+    carCount = 0;
+    while(!carFile.eof() && carCount < MAX_CARS) {
+        Car c;
+        string line;
+        if(!getline(carFile, line)) break;
+        sscanf(line.c_str(), "%[^,],%[^,],%d,%lf,%lf,%lf",
+               &c.make[0], &c.model[0], &c.year, &c.mileage, &c.fuelEfficiency, &c.topSpeed);
+        cars[carCount++] = c;
+    }
+    carFile.close();
+}
+
 
 
 
