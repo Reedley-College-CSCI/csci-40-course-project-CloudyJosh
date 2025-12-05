@@ -191,6 +191,16 @@ void sortCarsByMileage() {
     }
     cout << "Cars sorted by mileage.\n";
 }
+// saves car details to an external file for later retrieval
+void saveData() {
+    ofstream carFile("cars.txt");
+    for(int i=0; i<carCount; i++) {
+        carFile << cars[i].make << "," << cars[i].model << "," << cars[i].year << ",";
+        carFile << cars[i].mileage << "," << cars[i].fuelEfficiency << "," << cars[i].topSpeed << "\n";
+    }
+    carFile.close();
+    cout << "Data saved to file.\n";
+}
 
 
 
