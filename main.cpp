@@ -167,14 +167,16 @@ void addMaintenance() {
     cout << "Maintenance logged.\n";
 }
 // displays each cars details and its maintenance history
+// Improved summary formatting and safe maintenance loop
 void displayCarSummary() {
     for(int i=0; i<carCount; i++) {
-        cout << "\nCar: " << cars[i].make << " " << cars[i].model << "\n";
-        cout << "Year: " << cars[i].year << ", Mileage: " << cars[i].mileage << "\n";
-        cout << "Fuel Eff: " << cars[i].fuelEfficiency << ", Top Speed: " << cars[i].topSpeed << "\n";
+        cout << "\nCar #" << i+1 << ": " << cars[i].make << " " << cars[i].model << " (" << cars[i].year << ")\n";
+        cout << "Mileage: " << cars[i].mileage << ", Fuel Efficiency: " << cars[i].fuelEfficiency;
+        cout << ", Top Speed: " << cars[i].topSpeed << "\n";
         cout << "Maintenance Records:\n";
         for(int j=0; j<cars[i].numMaint; j++) {
-            cout << j+1 << ". " << cars[i].maints[j].type << " - " << cars[i].maints[j].date << " $" << cars[i].maints[j].cost << "\n";
+            cout << j+1 << ". " << cars[i].maints[j].type << " on " << cars[i].maints[j].date;
+            cout << ", Cost: $" << cars[i].maints[j].cost << "\n";
         }
     }
 }
@@ -230,6 +232,7 @@ void loadData() {
     }
     carFile.close();
 }
+
 
 
 
