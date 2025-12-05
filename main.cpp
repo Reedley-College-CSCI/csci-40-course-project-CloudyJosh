@@ -39,4 +39,18 @@ struct Car {
 Car cars[MAX_CARS];
 int carCount = 0;
 
+// Function declarations
+void loadData();
+void saveData();
+void addCar();
+void addMaintenance();
+void displayCarSummary();
+int searchCar(string make, string model);
+void sortCarsByYear();
+void sortCarsByMileage();
+void showMenu();
+int getIntInput(string prompt);
+double getDoubleInput(string prompt);
+string getStringInput(string prompt);
+
 
