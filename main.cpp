@@ -116,5 +116,16 @@ void addCar(){
       cout << "Car limit reached.\n";
       return;
 }
+Car c;
+    c.make = getStringInput("Enter car make: ");
+    c.model = getStringInput("Enter car model: ");
+    c.year = getIntInput("Enter car year: ");
+    c.mileage = getDoubleInput("Enter mileage: ");
+    c.fuelEfficiency = getDoubleInput("Enter fuel efficiency: ");
+    c.topSpeed = getDoubleInput("Enter top speed: ");
+    cars[carCount++] = c;
+    cout << "Car added successfully.\n";
+}
+
 
 
