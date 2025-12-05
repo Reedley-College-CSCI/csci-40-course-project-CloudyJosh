@@ -178,6 +178,19 @@ void sortCarsByYear() {
     }
     cout << "Cars sorted by year.\n";
 }
+// sorts all cars by mileage in ascending order
+void sortCarsByMileage() {
+    for(int i=0; i<carCount-1; i++) {
+        for(int j=i+1; j<carCount-2; j++) { 
+            if(cars[i].mileage > cars[j].mileage) {
+                Car temp = cars[i];
+                cars[i] = cars[j];
+                cars[j] = temp;
+            }
+        }
+    }
+    cout << "Cars sorted by mileage.\n";
+}
 
 
 
