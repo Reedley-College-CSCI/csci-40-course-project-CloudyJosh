@@ -85,11 +85,16 @@ cout << "1. Add Car\n";
     cout << "5. Sort Cars by Mileage\n";
     cout << "6. Exit\n";
 }
+// fixed getIntInput to validate user input and prevent invalid integers from crashing the program
 int getIntInput(string prompt) {
     int val;
     cout << prompt;
-    cin >> val;
-    cin.ignore(1000, '\n'); 
+    while(!(cin >> val)) {
+        cin.clear();
+        cin.ignore(1000, '\n');
+        cout << "Invalid input. Try again: ";
+    }
+    cin.ignore(1000, '\n');
     return val;
 }
 double getDoubleInput(string prompt) {
@@ -217,6 +222,7 @@ void loadData() {
     }
     carFile.close();
 }
+
 
 
 
