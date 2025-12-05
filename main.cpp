@@ -15,8 +15,13 @@
 #include <cstring>
 using namespace std;
 
-int main() {
-    return 0;
-}
+// Maximum number of cars and maintenance records
+const int MAX_CARS = 50;
+const int MAX_MAINT = 100;
 
-
+// structs
+struct Maintenance {
+    string type;
+    string date;
+    double cost;
+};
