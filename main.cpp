@@ -15,7 +15,7 @@
 #include <cstring>
 using namespace std;
 
-// Maximum number of cars and maintenance records
+// maximum number of cars and maintenance records
 const int MAX_CARS = 50;
 const int MAX_MAINT = 100;
 
@@ -35,4 +35,8 @@ struct Car {
     int numMaint;
     Maintenance maints[10];
 };
+// global arrays
+Car cars[MAX_CARS];
+int carCount = 0;
+
 
