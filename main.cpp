@@ -165,6 +165,19 @@ void displayCarSummary() {
         }
     }
 }
+// sorts all cars by year in ascending order
+void sortCarsByYear() {
+    for(int i=0; i<carCount-1; i++) {
+        for(int j=i+1; j<carCount; j++) {
+            if(cars[i].year > cars[j].year) {
+                Car temp = cars[i];
+                cars[i] = cars[j];
+                cars[j] = temp;
+            }
+        }
+    }
+    cout << "Cars sorted by year.\n";
+}
 
 
 
