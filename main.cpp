@@ -53,4 +53,27 @@ int getIntInput(string prompt);
 double getDoubleInput(string prompt);
 string getStringInput(string prompt);
 
+// main
+int main() {
+    loadData();
+
+    int choice;
+    do {
+        showMenu();
+        choice = getIntInput("Enter your choice: ");
+        switch(choice) {
+            case 1: addCar(); break;
+            case 2: addMaintenance(); break;
+            case 3: displayCarSummary(); break;
+            case 4: sortCarsByYear(); break;
+            case 5: sortCarsByMileage(); break;
+            case 6: cout << "Exiting program...\n"; break;
+            default: cout << "Invalid choice. Try again.\n";
+        }
+    } while(choice != 6);
+
+    saveData();
+    return 0;
+}
+
 
